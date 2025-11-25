@@ -21,7 +21,7 @@ const posts = [
     id: 3,
     title: "Terzo post",
     content: "Questo è il contenuto del terzo post.",
-    image: "./iamges/pane_fritto_dolce.jpeg",
+    image: "./images/pane_fritto_dolce.jpeg",
     tags: ["evento", "annuncio"]
   },
   {
@@ -44,6 +44,8 @@ const posts = [
 app.listen(PORT, () => {
   console.log(`App listening on port http://localhost:${PORT}`);
 });
+
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.send("Server del mio blog")
